@@ -6,7 +6,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 import mongoose, { mongo } from "mongoose";
-import { connect } from "http2";
+import routes from './routes'
 
 const PORT = 4000;
 
@@ -20,7 +20,7 @@ mongoose.connect(
   // API for uthenting av informasjon
 
   // Routes
-  //app.use("/recipe", recipeRoutes);
+  app.use("/recipe", routes);
   app.use(express.json());
 
   //Routes
