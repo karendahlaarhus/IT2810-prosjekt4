@@ -53,19 +53,19 @@ const SortBar = () => {
       >
         <Menu.Item
           onPress={() => handleSortOption("name asc")}
-          title="Alphabet - A-Z"
+          title="Title - A-Z"
         />
         <Menu.Item
           onPress={() => handleSortOption("name desc")}
-          title="Alphabet - Z-A"
+          title="Title - Z-A"
         />
         <Menu.Item
           onPress={() => handleSortOption("servings asc")}
-          title="Servings - ascending"
+          title="Servings - few to many"
         />
         <Menu.Item
           onPress={() => handleSortOption("servings desc")}
-          title="Servings - descending"
+          title="Servings - many to few"
         />
       </Menu>
     </View>

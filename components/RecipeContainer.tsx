@@ -3,6 +3,7 @@ import SearchBar from "./SearchBar";
 import SortBar from "./SortBar";
 import { View, StyleSheet, TextInput, Text } from "react-native";
 import RecipeDisplay from "./RecipeDisplay";
+import FilterBar from "./FilterBar";
 
 export default function RecipeContainer() {
   return (
@@ -15,6 +16,7 @@ export default function RecipeContainer() {
       </Text>
       <SearchBar />
       <SortBar />
+      <FilterBar />
       <RecipeDisplay />
     </View>
   );
