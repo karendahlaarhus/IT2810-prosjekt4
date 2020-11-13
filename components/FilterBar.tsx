@@ -2,7 +2,13 @@ import { connect, useDispatch } from "react-redux";
 import React from "react";
 import { updateFilter } from "../store/actions/actions";
 import { Checkbox } from "react-native-paper";
-import { View } from "react-native";
+import { View, StyleSheet, AsyncStorage } from "react-native";
+
+/**
+ *
+ * To update if the boxes is already checked or not by using data from Redux
+ * https://medium.com/building-with-react-native/what-is-asyncstorage-in-react-native-and-how-you-to-use-it-with-app-state-manager-1x09-b8c636ce5f6e
+ */
 
 export const FilterBar = () => {
   const dispatch = useDispatch();
@@ -13,7 +19,7 @@ export const FilterBar = () => {
   const [checkedVeg, setCheckedVeg] = React.useState(false);
 
   return (
-    <View>
+    <View style={styles.container}>
       <Checkbox.Item
         label="Main"
         onPress={() => {
@@ -55,6 +61,16 @@ export const FilterBar = () => {
 
 const mapStateToProps = (state: { recipes: { filterChoice: [] } }) => ({
   filterChoice: state.recipes.filterChoice,
+});
+
+const styles = StyleSheet.create({
+  container: {
+    // flex: 2,
+    backgroundColor: "#fff",
+    alignItems: "stretch",
+    justifyContent: "center",
+    flexDirection: "column",
+  },
 });
 
 export default connect(mapStateToProps)(FilterBar);

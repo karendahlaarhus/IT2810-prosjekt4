@@ -1,14 +1,13 @@
 import React from "react";
 import SearchBar from "./SearchBar";
 import SortBar from "./SortBar";
-import { View, StyleSheet, TextInput, Text } from "react-native";
+import { View, StyleSheet, Dimensions, Text } from "react-native";
 import RecipeDisplay from "./RecipeDisplay";
 import FilterBar from "./FilterBar";
 
 export default function RecipeContainer() {
   return (
-    <View>
-      <Text style={styles.header}> bon appétit </Text>
+    <View style={styles.container}>
       <Text style={styles.header}>
         {" "}
         What do you want to eat today? Search among hundreds of delicious
@@ -16,18 +15,22 @@ export default function RecipeContainer() {
       </Text>
       <SearchBar />
       <SortBar />
-      <FilterBar />
+      {/*  <FilterBar /> */}
       <RecipeDisplay />
     </View>
   );
 }
 
+var { height, width } = Dimensions.get("window");
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexDirection: "column",
     backgroundColor: "#fff",
-    alignItems: "center",
+    alignItems: "stretch",
     justifyContent: "center",
+    paddingTop: height * 0.1,
+    paddingLeft: width * 0.1,
+    paddingRight: width * 0.1,
   },
   header: {
     fontFamily: "Futura",

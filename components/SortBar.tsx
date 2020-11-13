@@ -4,8 +4,8 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { fireAction } from "../store/reducers/appReducer";
-import { Button, Menu, Provider } from "react-native-paper";
-import { View, TextInput } from "react-native";
+import { Button, Menu, Provider, Drawer } from "react-native-paper";
+import { View, StyleSheet } from "react-native";
 
 const SortBar = () => {
   const dispatch = useDispatch();
@@ -20,20 +20,10 @@ const SortBar = () => {
 
     //To display the sorting chosen by the user
     setValue(optionValue);
-
-    console.log("optionArray.includes('asc') ", optionArray.includes("asc"));
   };
 
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <TextInput
-        style={{
-          width: 300,
-          backgroundColor: "transparent",
-          margin: 0,
-          padding: 0,
-        }}
-      />
+    <View style={styles.container}>
       <Menu
         style={{ marginTop: 70 }}
         visible={isOpen}
@@ -55,6 +45,7 @@ const SortBar = () => {
           onPress={() => handleSortOption("name asc")}
           title="Title - A-Z"
         />
+
         <Menu.Item
           onPress={() => handleSortOption("name desc")}
           title="Title - Z-A"
@@ -77,3 +68,12 @@ export default () => (
     <SortBar />
   </Provider>
 );
+
+const styles = StyleSheet.create({
+  container: {
+    //flex: 2,
+    backgroundColor: "#fff",
+    alignItems: "stretch",
+    justifyContent: "center",
+  },
+});

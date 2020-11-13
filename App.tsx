@@ -3,27 +3,20 @@ import { Dimensions, StyleSheet, View } from "react-native";
 import { Provider } from "react-redux";
 import store from "./store/store";
 import RecipeContainer from "./components/RecipeContainer";
+import ScreenBar from "./components/ScreenBar";
+import { Provider as PaperProvider } from "react-native-paper";
 
 export default function App() {
   return (
-    <Provider store={store}>
-      <View style={styles.container}>
-        <RecipeContainer />
-      </View>
-    </Provider>
+    <PaperProvider>
+      <Provider store={store}>
+        <View>
+          <ScreenBar />
+          <RecipeContainer />
+        </View>
+      </Provider>
+    </PaperProvider>
   );
 }
 
-var { height, width } = Dimensions.get("window");
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: "column",
-    backgroundColor: "#fff",
-    alignItems: "stretch",
-    justifyContent: "center",
-    paddingTop: height * 0.1,
-    paddingLeft: width * 0.1,
-    paddingRight: width * 0.1,
-  },
-});
+const styles = StyleSheet.create({});
