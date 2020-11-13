@@ -52,13 +52,6 @@ const RecipeDisplay = (props: PropsFromRedux) => {
   const sortInfo = useSelector((state: RootState) => state.recipes.sortBy);
   const ascending = useSelector((state: RootState) => state.recipes.ascending);
 
-  //For dialog
-  const [visible, setVisible] = React.useState(false);
-
-  const showDialog = () => setVisible(true);
-
-  const hideDialog = () => setVisible(false);
-
   function sortOrderToString(sortOrder: boolean) {
     let order = "";
     if (sortOrder) {
