@@ -2,16 +2,18 @@ import React, { useEffect, useState } from "react";
 import { connect, ConnectedProps, useSelector } from "react-redux";
 import { RootState } from "../store/reducers";
 import { initialState } from "../store/reducers/appReducer";
+import { View, FlatList } from "react-native";
+import Modal from "./Modal";
+import SearchBar from "./SearchBar";
 import {
-    View,
-    FlatList,
-    Text
-  } from 'react-native';
-
+  Paragraph,
+  Provider as PaperProvider,
+  Title,
+} from "react-native-paper";
 
 const mapState = (state: typeof initialState) => ({
   text: state.text,
-  ascending: state.ascending, 
+  ascending: state.ascending,
   sortBy: state.sortBy,
   filterChoice: state.filterChoice,
 });
@@ -74,16 +76,24 @@ const RecipeDisplay = (props: PropsFromRedux) => {
   }, [page, searchText, filters, sortInfo, ascending]);
 
   return (
-
-    <View>
-        <FlatList 
+    <>
+      <SearchBar />
+      <FlatList
         data={recipes}
         renderItem={({ item }) => (
-            <Text>{JSON.stringify(item.name)}</Text>
-          )}
-        />
-    </View>
-
+          <Modal
+            _id={item.id}
+            name={item.name}
+            ingredients={item.ingredients}
+            servings={item.servings}
+            instructions={item.instructions}
+            preptime={item.preptime}
+            rating={item.rating}
+            tags={item.tags}
+          />
+        )}
+      />
+    </>
   );
 };
 
