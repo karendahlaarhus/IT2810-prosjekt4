@@ -1,7 +1,5 @@
 import React from "react";
 import SearchBar from "./SearchBar";
-import { StyleSheet, View } from "react-native";
-import RecipeDisplay from "./RecipeDisplay";
 import {
   Paragraph,
   Provider as PaperProvider,

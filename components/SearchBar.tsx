@@ -1,7 +1,7 @@
 import React from "react";
 import { sendQuery } from "../store/actions/actions";
 import { useSelector, useDispatch } from "react-redux";
-import { View } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { Input } from "react-native-elements";
 import { Paragraph, Title } from "react-native-paper";
 
