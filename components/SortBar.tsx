@@ -68,8 +68,5 @@ const styles = StyleSheet.create({
   container: {
     //flex: 2,
   },
-  button: {
-    margin: 2,
-    backgroundColor: "#7ABAA1",
-  },
+  button: {},
 });

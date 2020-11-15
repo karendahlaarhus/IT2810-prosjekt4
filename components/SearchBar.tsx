@@ -10,12 +10,12 @@ export const SearchBar = () => {
 
   return (
     <View>
-      <Title> bon appétit </Title>
+      {/* <Title> bon appétit </Title>
       <Paragraph>
         {" "}
         What do you want to eat today? Search among hundreds of delicious
         recipes.{" "}
-      </Paragraph>
+      </Paragraph> */}
       <Input
         placeholder="Search for recipes"
         onChangeText={(text) => dispatch(sendQuery(text))}

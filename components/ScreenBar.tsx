@@ -21,7 +21,7 @@ const ScreenBar = () => {
 
   return (
     <View>
-      <Appbar.Header statusBarHeight={60}>
+      <Appbar.Header statusBarHeight={20}>
         <Appbar.BackAction onPress={_goBack} />
         <Appbar.Content title="Search for a recipe" />
         {/* <Appbar.Action icon="dots-vertical" onPress={showDialog} /> */}

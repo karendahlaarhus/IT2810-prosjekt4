@@ -27,12 +27,7 @@ export const FilterBar = () => {
 
   return (
     <View style={styles.container}>
-      <Button
-        style={{ backgroundColor: "#7ABAA1" }}
-        mode="contained"
-        onPress={toggleFilter}
-        icon="filter"
-      >
+      <Button mode="contained" onPress={toggleFilter} icon="filter">
         Filter
       </Button>
 
