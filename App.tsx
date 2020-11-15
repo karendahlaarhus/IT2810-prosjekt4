@@ -5,6 +5,7 @@ import store from "./store/store";
 import RecipeContainer from "./components/RecipeContainer";
 import ScreenBar from "./components/ScreenBar";
 import { Provider as PaperProvider } from "react-native-paper";
+import Frontpage from "./components/Frontpage/Frontpage";
 
 export default function App() {
   return (
@@ -12,7 +13,8 @@ export default function App() {
       <Provider store={store}>
         <View style={styles.container}>
           <ScreenBar />
-          <RecipeContainer />
+          {/* <RecipeContainer /> */}
+          <Frontpage></Frontpage>
         </View>
       </Provider>
     </PaperProvider>
@@ -21,11 +23,6 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    marginTop: 50,
-    margin: 30,
     backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
   },
 });
