@@ -9,7 +9,7 @@ import {
 } from "react-native-paper";
 import SortBar from "./SortBar";
 import ScreenBar from "./ScreenBar";
-import { View, StyleSheet, Dimensions, Text } from "react-native";
+import { View, StyleSheet, Dimensions } from "react-native";
 import RecipeDisplay from "./RecipeDisplay";
 import FilterBar from "./FilterBar";
 
@@ -47,5 +47,6 @@ const styles = StyleSheet.create({
   filterSortContainer: {
     display: "flex",
     flexDirection: "row",
+    justifyContent: "space-evenly",
   },
 });

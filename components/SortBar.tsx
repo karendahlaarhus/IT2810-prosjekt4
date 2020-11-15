@@ -36,7 +36,7 @@ const SortBar = () => {
             mode="contained"
             onPress={() => setOpen(true)}
           >
-            Sort by {value}
+            Sort {value}
           </Button>
         }
       >
@@ -70,5 +70,6 @@ const styles = StyleSheet.create({
   },
   button: {
     margin: 2,
+    backgroundColor: "#7ABAA1",
   },
 });
