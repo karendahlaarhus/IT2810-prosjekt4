@@ -78,7 +78,7 @@ const RecipeDisplay = (props: PropsFromRedux) => {
 
   return (
     <>
-      <SearchBar />
+      {/* <SearchBar /> */}
 
       <FlatList
         data={recipes}

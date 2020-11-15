@@ -24,7 +24,7 @@ const ScreenBar = () => {
       <Appbar.Header statusBarHeight={60}>
         <Appbar.BackAction onPress={_goBack} />
         <Appbar.Content title="Search for a recipe" />
-        <Appbar.Action icon="dots-vertical" onPress={showDialog} />
+        {/* <Appbar.Action icon="dots-vertical" onPress={showDialog} /> */}
       </Appbar.Header>
       <Portal>
         <Dialog visible={visible} onDismiss={hideDialog}>

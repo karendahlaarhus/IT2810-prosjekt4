@@ -30,8 +30,7 @@ const SortBar = () => {
         onDismiss={() => setOpen(false)}
         anchor={
           <Button
-            style={{ marginTop: 25 }}
-            color="#8DB600"
+            style={styles.button}
             icon="swap-vertical"
             dark={true}
             mode="contained"
@@ -68,8 +67,8 @@ export default () => <SortBar />;
 const styles = StyleSheet.create({
   container: {
     //flex: 2,
-    backgroundColor: "#fff",
-    alignItems: "stretch",
-    justifyContent: "center",
+  },
+  button: {
+    margin: 2,
   },
 });
