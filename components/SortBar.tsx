@@ -63,11 +63,7 @@ const SortBar = () => {
   );
 };
 
-export default () => (
-  <Provider>
-    <SortBar />
-  </Provider>
-);
+export default () => <SortBar />;
 
 const styles = StyleSheet.create({
   container: {

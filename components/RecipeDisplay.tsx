@@ -10,6 +10,7 @@ import {
   Provider as PaperProvider,
   Title,
 } from "react-native-paper";
+import SortBar from "./SortBar";
 
 const mapState = (state: typeof initialState) => ({
   text: state.text,
@@ -78,6 +79,7 @@ const RecipeDisplay = (props: PropsFromRedux) => {
   return (
     <>
       <SearchBar />
+
       <FlatList
         data={recipes}
         renderItem={({ item }) => (

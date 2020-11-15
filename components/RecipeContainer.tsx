@@ -13,14 +13,9 @@ import FilterBar from "./FilterBar";
 export default function RecipeContainer() {
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>
-        {" "}
-        What do you want to eat today? Search among hundreds of delicious
-        recipes.{" "}
-      </Text>
-      <SearchBar />
+      {/* <SearchBar /> */}
       <SortBar />
-      {/*  <FilterBar /> */}
+      {/* <FilterBar /> */}
       <RecipeDisplay />
     </View>
   );
