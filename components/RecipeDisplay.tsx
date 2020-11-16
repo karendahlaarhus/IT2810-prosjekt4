@@ -4,13 +4,7 @@ import { RootState } from "../store/reducers";
 import { initialState } from "../store/reducers/appReducer";
 import { View, FlatList } from "react-native";
 import Modal from "./Modal";
-import SearchBar from "./SearchBar";
-import {
-  Paragraph,
-  Provider as PaperProvider,
-  Title,
-} from "react-native-paper";
-import SortBar from "./SortBar";
+import { Button, Provider as PaperProvider } from "react-native-paper";
 
 const mapState = (state: typeof initialState) => ({
   text: state.text,
@@ -29,7 +23,6 @@ const mapDispatch = {
 };
 
 const connector = connect(mapState, mapDispatch);
-
 type PropsFromRedux = ConnectedProps<typeof connector>;
 
 const RecipeDisplay = (props: PropsFromRedux) => {
@@ -39,9 +32,16 @@ const RecipeDisplay = (props: PropsFromRedux) => {
   const [page, setPage] = React.useState(1);
 
   //Handles change in pagenumber
-  const handleChange = (event: any, value: React.SetStateAction<number>) => {
-    setPage(value);
+  const handleNext = () => {
+    setPage(page + 1);
   };
+  const handlePrev = () => {
+    if(page === 1){
+      //Button.type = disabled
+    }else{
+      setPage(page - 1);
+    }
+  }
 
   // Functionality for searching among the recipe titles
   const searchText = useSelector((state: RootState) => state.recipes.text);
@@ -66,7 +66,6 @@ const RecipeDisplay = (props: PropsFromRedux) => {
   useEffect(() => {
     async function fetchData() {
       let sortOrder = sortOrderToString(ascending);
-      console.log(searchText);
       const response = await fetch(
         `http://it2810-36.idi.ntnu.no:3000/recipe?page=${page}&name=${searchText}&tags=${filters}&sortBy=${sortInfo}&sortOrder=${sortOrder}`
       );
@@ -78,12 +77,12 @@ const RecipeDisplay = (props: PropsFromRedux) => {
 
   return (
     <>
-      {/* <SearchBar /> */}
-
+      <View>
       <FlatList
         data={recipes}
         renderItem={({ item }) => (
-          <Modal
+          <Modal 
+            key = {item.id}
             _id={item.id}
             name={item.name}
             ingredients={item.ingredients}
@@ -92,9 +91,14 @@ const RecipeDisplay = (props: PropsFromRedux) => {
             preptime={item.preptime}
             rating={item.rating}
             tags={item.tags}
+            
           />
         )}
       />
+      <Button onPress={() => handlePrev()}>Previous</Button>
+      <Button onPress={() => handleNext()}>Next</Button>
+      
+      </View>
     </>
   );
 };
