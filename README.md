@@ -23,7 +23,10 @@ Når det gjelder oppsett av prosjektets design og utforming har vi valgt å beny
 ## Gjenbruk
 All funksjonaliteten vi ønsket å ha i applikasjonen hadde vi allerede utviklet for webapplikasjonen i prosjekt 3. Mesteparten av arbeidet har derfor bestått i å overføre dette til React Native. All kode for å håndtere endringer av state (gjort med Redux) er derfor gjenbrukt fra prosjekt 3. 
 
+#### Skrive om valg om å fokusere på design eller funksjonalitet når det gjelder filter-funksjonen 
+
 ## Testing
 Applikasjonen er manuelt ende-til-ende testet kontinuerlig under utvikling. Dette er gjort for å ikke overse åpenbare tekniske feil som hadde gjort at applikasjonen ikke hadde fungert som ønsket. Dette er gjort ved å bruke Expo's utivklingsverktøy for mobil ved å bruke deres mobilapplikasjon (Expo client app) for å få tilgang til applikasjonen som kjører på localhost på datamaskinen.  
 
 ## Samarbeid, kommunikasjon og bruk av Git
+Alle tre gruppemedlemmene har bidratt til prosjektet. Arbeidsoppgaven er fordelt ved å opprette issues i GitLab, for å deretter opprette branches til hvert enkelt issue. Her har vi fordelt issues i mellom oss, slik at vi var sikre på at alle arbeidsoppgaver ble utført i tide. 
