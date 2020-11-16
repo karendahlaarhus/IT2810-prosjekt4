@@ -1,8 +1,9 @@
 import { connect, useDispatch } from "react-redux";
-import React from "react";
+import React, { useState } from "react";
 import { updateFilter } from "../store/actions/actions";
-import { Checkbox } from "react-native-paper";
+import { Button, Checkbox, Paragraph, ToggleButton } from "react-native-paper";
 import { View, StyleSheet, AsyncStorage } from "react-native";
+import { grey } from "@material-ui/core/colors";
 
 /**
  *
@@ -18,43 +19,58 @@ export const FilterBar = () => {
   const [checkedSoup, setCheckedSoup] = React.useState(false);
   const [checkedVeg, setCheckedVeg] = React.useState(false);
 
+  const [isOpenedFilter, setIsOpenedFilter] = useState(false);
+
+  function toggleFilter() {
+    setIsOpenedFilter((wasOpened) => !wasOpened);
+  }
+
   return (
     <View style={styles.container}>
-      <Checkbox.Item
-        label="Main"
-        onPress={() => {
-          dispatch(updateFilter("main")), setCheckedMain(!checkedMain);
-        }}
-        status={checkedMain ? "checked" : "unchecked"}
-      />
-      <Checkbox.Item
-        label="Snack"
-        onPress={() => {
-          dispatch(updateFilter("snack")), setCheckedSnack(!checkedSnack);
-        }}
-        status={checkedSnack ? "checked" : "unchecked"}
-      />
-      <Checkbox.Item
-        label="Dessert"
-        onPress={() => {
-          dispatch(updateFilter("dessert")), setCheckedDessert(!checkedDessert);
-        }}
-        status={checkedDessert ? "checked" : "unchecked"}
-      />
-      <Checkbox.Item
-        label="Vegetarian"
-        onPress={() => {
-          dispatch(updateFilter("vegetarian")), setCheckedVeg(!checkedVeg);
-        }}
-        status={checkedVeg ? "checked" : "unchecked"}
-      />
-      <Checkbox.Item
-        label="Soup"
-        onPress={() => {
-          dispatch(updateFilter("soup")), setCheckedSoup(!checkedSoup);
-        }}
-        status={checkedSoup ? "checked" : "unchecked"}
-      />
+      <Button mode="contained" onPress={toggleFilter} icon="filter">
+        Filter
+      </Button>
+
+      {isOpenedFilter && (
+        <>
+          <Checkbox.Item
+            label="Main"
+            onPress={() => {
+              dispatch(updateFilter("main")), setCheckedMain(!checkedMain);
+            }}
+            status={checkedMain ? "checked" : "unchecked"}
+          />
+          <Checkbox.Item
+            label="Snack"
+            onPress={() => {
+              dispatch(updateFilter("snack")), setCheckedSnack(!checkedSnack);
+            }}
+            status={checkedSnack ? "checked" : "unchecked"}
+          />
+          <Checkbox.Item
+            label="Dessert"
+            onPress={() => {
+              dispatch(updateFilter("dessert")),
+                setCheckedDessert(!checkedDessert);
+            }}
+            status={checkedDessert ? "checked" : "unchecked"}
+          />
+          <Checkbox.Item
+            label="Vegetarian"
+            onPress={() => {
+              dispatch(updateFilter("vegetarian")), setCheckedVeg(!checkedVeg);
+            }}
+            status={checkedVeg ? "checked" : "unchecked"}
+          />
+          <Checkbox.Item
+            label="Soup"
+            onPress={() => {
+              dispatch(updateFilter("soup")), setCheckedSoup(!checkedSoup);
+            }}
+            status={checkedSoup ? "checked" : "unchecked"}
+          />
+        </>
+      )}
     </View>
   );
 };
@@ -67,9 +83,10 @@ const styles = StyleSheet.create({
   container: {
     // flex: 2,
     backgroundColor: "#fff",
-    alignItems: "stretch",
     justifyContent: "center",
-    flexDirection: "column",
+  },
+  button: {
+    color: "#7ABAA1",
   },
 });
 
