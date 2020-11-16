@@ -1,21 +1,29 @@
 import React from "react";
 import SearchBar from "./SearchBar";
 import {
+  Button,
   Paragraph,
   Provider as PaperProvider,
   Title,
+  ToggleButton,
 } from "react-native-paper";
 import SortBar from "./SortBar";
-import { View, StyleSheet, Dimensions, Text } from "react-native";
+import ScreenBar from "./ScreenBar";
+import { View, StyleSheet, Dimensions } from "react-native";
 import RecipeDisplay from "./RecipeDisplay";
 import FilterBar from "./FilterBar";
 
 export default function RecipeContainer() {
   return (
     <View style={styles.container}>
-      {/* <SearchBar /> */}
-      <SortBar />
+      <SearchBar />
+      <View style={styles.filterSortContainer}>
+        <SortBar />
+        <FilterBar />
+      </View>
+
       {/* <FilterBar /> */}
+
       <RecipeDisplay />
     </View>
   );
@@ -35,5 +43,10 @@ const styles = StyleSheet.create({
   header: {
     fontFamily: "Futura",
     color: "#35281e",
+  },
+  filterSortContainer: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-evenly",
   },
 });
