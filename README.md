@@ -21,9 +21,10 @@ Prosjektet er som nevnt oppsatt med React Native som er et åpent kildekoderamme
 Når det gjelder oppsett av prosjektets design og utforming har vi valgt å benytte oss av [Ract Native Paper](https://callstack.github.io/react-native-paper/)  til dette. Dette er en tredjepartskomponent som tilbyr en rekke komponenter for å enkelt sette opp en mobilapplikasjon med de funksjonalitetene man måtte ønske. Ingen av gruppemedlemmene hadde erfaring fra utvikling av mobilapplikasjoner fra før, så valget falt på en tredjepartskomponent som var forholdsvis grei å sette seg inn i, samt hadde en dokumentasjon som man enkelt kunne følge.  
 
 ## Gjenbruk
-All funksjonaliteten vi ønsket å ha i applikasjonen hadde vi allerede utviklet for webapplikasjonen i prosjekt 3. Mesteparten av arbeidet har derfor bestått i å overføre dette til React Native. All kode for å håndtere endringer av state (gjort med Redux) er derfor gjenbrukt fra prosjekt 3. 
+All funksjonaliteten vi ønsket å ha i applikasjonen hadde vi allerede utviklet for webapplikasjonen i prosjekt 3. Mesteparten av arbeidet har derfor bestått i å overføre dette til React Native. All kode for å håndtere endringer av state (gjort med Redux) er derfor gjenbrukt fra prosjekt 3. Dette gjelder da funksjonalitet for søk, sortering og filtrering. 
 
-#### Skrive om valg om å fokusere på design eller funksjonalitet når det gjelder filter-funksjonen 
+Der det har vært en utfordring å tilpasse designet slik vi ønsker, samtidig som man tar vare på applikasjonens funksjonalitet, har vi prioritert å bevare funksjonalitet. Dette gjelder primært funksjonaliteten for å filtrere på kategorier. Her ønsket vi å gjøre designet likt som for sortering, men opplevde det da som en utfordring å bevare støtten få å velge flere filtre enn kunn ett. Det ble derfor besluttet å beholde den løsningen vi har nå, hvor brukeren får mulighet til å velge fler filtre, slik oppgaven etterspør. 
+
 
 ## Testing
 Applikasjonen er manuelt ende-til-ende testet kontinuerlig under utvikling. Dette er gjort for å ikke overse åpenbare tekniske feil som hadde gjort at applikasjonen ikke hadde fungert som ønsket. Dette er gjort ved å bruke Expo's utivklingsverktøy for mobil ved å bruke deres mobilapplikasjon (Expo client app) for å få tilgang til applikasjonen som kjører på localhost på datamaskinen.  
