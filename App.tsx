@@ -13,8 +13,8 @@ export default function App() {
       <Provider store={store}>
         <View style={styles.container}>
           <ScreenBar />
-          {/* <RecipeContainer /> */}
-          <Frontpage></Frontpage>
+          <RecipeContainer />
+          {/*<Frontpage></Frontpage> */}
         </View>
       </Provider>
     </PaperProvider>
@@ -23,11 +23,6 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-<<<<<<< HEAD
-=======
-    flex: 1,
-
->>>>>>> 015bc3dfb39d38ba6a204255c4ee17f69e5a411f
     backgroundColor: "#fff",
   },
 });
