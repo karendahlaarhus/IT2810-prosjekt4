@@ -6,6 +6,7 @@ import { Dialog, Paragraph, Button, Portal, Chip } from "react-native-paper";
 a recipe is clicked */
 
 interface IModal {
+  key: number;
   _id: number;
   name: string;
   ingredients: Array<String>;

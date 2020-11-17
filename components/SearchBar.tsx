@@ -20,7 +20,7 @@ export const SearchBar = () => {
         placeholder="Search for recipes"
         onChangeText={(text) => dispatch(sendQuery(text))}
         style={{
-          color: "white",
+          color: "grey",
           borderColor: "white",
           backgroundColor: "white",
         }}
