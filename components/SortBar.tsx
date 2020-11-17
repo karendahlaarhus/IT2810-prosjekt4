@@ -33,7 +33,9 @@ const SortBar = () => {
             style={styles.button}
             icon="swap-vertical"
             dark={true}
-            mode="contained"
+            mode="outlined"
+            color="#006a4e"
+            compact
             onPress={() => setOpen(true)}
           >
             Sort {value}

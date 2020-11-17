@@ -1,24 +1,29 @@
 import React from "react";
 import { sendQuery } from "../store/actions/actions";
-import { useSelector, useDispatch } from "react-redux";
-import { View, StyleSheet } from "react-native";
-import { Input } from "react-native-elements";
-import { Paragraph, Title } from "react-native-paper";
+import { useDispatch } from "react-redux";
+import { StyleSheet, View } from "react-native";
+import { Icon, Input } from "react-native-elements";
+import { TextInput } from "react-native-paper";
 
 export const SearchBar = () => {
   const dispatch = useDispatch();
 
   return (
-    <View>
-      {/* <Title> bon appétit </Title>
-      <Paragraph>
-        {" "}
-        What do you want to eat today? Search among hundreds of delicious
-        recipes.{" "}
-      </Paragraph> */}
+    <View style={styles.container}>
+      <Icon
+        name="search"
+        size={30}
+        color="grey"
+        style={{ marginTop: 10 }}
+      ></Icon>
       <Input
         placeholder="Search for recipes"
         onChangeText={(text) => dispatch(sendQuery(text))}
+        style={{
+          color: "white",
+          borderColor: "white",
+          backgroundColor: "white",
+        }}
       />
     </View>
   );
@@ -30,10 +35,12 @@ const mapStateToProps = (state: { recipes: { text: any } }) => ({
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "stretch",
+    display: "flex",
+    flexDirection: "row",
     justifyContent: "center",
+    marginBottom: 20,
+    padding: 20,
+    paddingBottom: 10,
   },
 });
 

@@ -1,13 +1,6 @@
 import React, { useState } from "react";
 import { ScrollView, View, StyleSheet } from "react-native";
-import {
-  Dialog,
-  Paragraph,
-  Button,
-  Portal,
-  ToggleButton,
-  Chip,
-} from "react-native-paper";
+import { Dialog, Paragraph, Button, Portal, Chip } from "react-native-paper";
 
 interface IModal {
   _id: number;
@@ -21,12 +14,10 @@ interface IModal {
 }
 
 const Modal: React.FC<IModal> = ({
-  _id,
   name,
   ingredients,
   servings,
   instructions,
-  preptime,
   tags,
 }) => {
   // for dialog
@@ -52,7 +43,14 @@ const Modal: React.FC<IModal> = ({
 
   return (
     <View>
-      <Button color="blue" compact onPress={showDialog}>
+      <Button
+        color="#006a4e"
+        mode="text"
+        compact
+        onPress={showDialog}
+        style={{ margin: 5 }}
+        uppercase={false}
+      >
         {name}
       </Button>
       <Portal>
@@ -65,14 +63,12 @@ const Modal: React.FC<IModal> = ({
                   .toString()
                   .split(",")
                   .map((item) => (
-                    <Chip textStyle={{ color: "grey", fontSize: 15 }}>
-                      {item}
-                    </Chip>
+                    <Chip textStyle={{ color: "grey" }}>{item}</Chip>
                   ))}
               </View>
 
               <Dialog.Content>
-                <Paragraph>
+                <Paragraph style={{ marginTop: 15 }}>
                   Here you will learn how to make delicious {name}
                 </Paragraph>
 
@@ -83,6 +79,7 @@ const Modal: React.FC<IModal> = ({
                   mode="contained"
                   onPress={toggleIng}
                   style={styles.button}
+                  uppercase={false}
                 >
                   Ingredients
                 </Button>
@@ -91,6 +88,7 @@ const Modal: React.FC<IModal> = ({
                   mode="contained"
                   onPress={toggleInst}
                   style={styles.button}
+                  uppercase={false}
                 >
                   Instuctions
                 </Button>
@@ -111,6 +109,7 @@ const Modal: React.FC<IModal> = ({
 const styles = StyleSheet.create({
   basetext: {
     fontWeight: "bold",
+    marginTop: 10,
   },
 
   container: {
@@ -120,8 +119,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   button: {
-    backgroundColor: "#7ABAA1",
-    margin: 5,
+    backgroundColor: "#006a4e",
+    margin: 10,
   },
 });
 

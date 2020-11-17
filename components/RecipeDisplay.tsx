@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { connect, ConnectedProps, useSelector } from "react-redux";
 import { RootState } from "../store/reducers";
 import { initialState } from "../store/reducers/appReducer";
-import { View, FlatList } from "react-native";
+import { View, FlatList, StyleSheet } from "react-native";
 import Modal from "./Modal";
 import { Button, Provider as PaperProvider } from "react-native-paper";
+import { Icon } from "react-native-elements";
 
 const mapState = (state: typeof initialState) => ({
   text: state.text,
@@ -36,12 +37,12 @@ const RecipeDisplay = (props: PropsFromRedux) => {
     setPage(page + 1);
   };
   const handlePrev = () => {
-    if(page === 1){
+    if (page === 1) {
       //Button.type = disabled
-    }else{
+    } else {
       setPage(page - 1);
     }
-  }
+  };
 
   // Functionality for searching among the recipe titles
   const searchText = useSelector((state: RootState) => state.recipes.text);
@@ -78,29 +79,60 @@ const RecipeDisplay = (props: PropsFromRedux) => {
   return (
     <>
       <View>
-      <FlatList
-        data={recipes}
-        renderItem={({ item }) => (
-          <Modal 
-            key = {item.id}
-            _id={item.id}
-            name={item.name}
-            ingredients={item.ingredients}
-            servings={item.servings}
-            instructions={item.instructions}
-            preptime={item.preptime}
-            rating={item.rating}
-            tags={item.tags}
-            
-          />
-        )}
-      />
-      <Button onPress={() => handlePrev()}>Previous</Button>
-      <Button onPress={() => handleNext()}>Next</Button>
-      
+        <FlatList
+          data={recipes}
+          renderItem={({ item }) => (
+            <Modal
+              key={item.id}
+              _id={item.id}
+              name={item.name}
+              ingredients={item.ingredients}
+              servings={item.servings}
+              instructions={item.instructions}
+              preptime={item.preptime}
+              rating={item.rating}
+              tags={item.tags}
+            />
+          )}
+        />
+        <View style={styles.wrapper}>
+          <Button
+            onPress={() => handlePrev()}
+            style={styles.prevNext}
+            compact
+            color="#006a4e"
+          >
+            <Icon
+              name="navigate-next"
+              color="#006a4e"
+              size={40}
+              style={{ transform: [{ rotateY: "180deg" }] }}
+            />
+          </Button>
+          <Button
+            onPress={() => handleNext()}
+            style={styles.prevNext}
+            compact
+            color="#006a4e"
+          >
+            <Icon name="navigate-next" color="#006a4e" size={40} />
+          </Button>
+        </View>
       </View>
     </>
   );
 };
+
+const styles = StyleSheet.create({
+  wrapper: {
+    backgroundColor: "#fff",
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "row",
+  },
+  prevNext: {
+    marginTop: 20,
+  },
+});
 
 export default connector(RecipeDisplay);

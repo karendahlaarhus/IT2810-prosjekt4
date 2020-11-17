@@ -27,7 +27,13 @@ export const FilterBar = () => {
 
   return (
     <View style={styles.container}>
-      <Button mode="contained" onPress={toggleFilter} icon="filter">
+      <Button
+        mode="outlined"
+        color="#006a4e"
+        onPress={toggleFilter}
+        icon="filter"
+        compact
+      >
         Filter
       </Button>
 
@@ -84,9 +90,6 @@ const styles = StyleSheet.create({
     // flex: 2,
     backgroundColor: "#fff",
     justifyContent: "center",
-  },
-  button: {
-    color: "#7ABAA1",
   },
 });
 

@@ -1,31 +1,37 @@
 import React from "react";
 import SearchBar from "./SearchBar";
-import {
-  Button,
-  Paragraph,
-  Provider as PaperProvider,
-  Title,
-  ToggleButton,
-} from "react-native-paper";
 import SortBar from "./SortBar";
-import ScreenBar from "./ScreenBar";
-import { View, StyleSheet, Dimensions } from "react-native";
+import { Text } from "react-native";
+import {
+  View,
+  StyleSheet,
+  Dimensions,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
 import RecipeDisplay from "./RecipeDisplay";
 import FilterBar from "./FilterBar";
+import ScreenBar from "./ScreenBar";
+import { Actions } from "react-native-router-flux";
 
 export default function RecipeContainer() {
+  const goToHome = () => {
+    Actions.frontpage();
+  };
   return (
-    <View style={styles.container}>
-      <SearchBar />
-      <View style={styles.filterSortContainer}>
-        <SortBar />
-        <FilterBar />
-      </View>
-
-      {/* <FilterBar /> */}
-
-      <RecipeDisplay />
-    </View>
+    <>
+      <ScrollView>
+        {/* <ScreenBar /> */}
+        <View style={styles.container}>
+          <SearchBar />
+          <View style={styles.filterSortContainer}>
+            <SortBar />
+            <FilterBar />
+          </View>
+          <RecipeDisplay />
+        </View>
+      </ScrollView>
+    </>
   );
 }
 
@@ -36,17 +42,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "stretch",
     justifyContent: "center",
-    paddingTop: height * 0.1,
-    paddingLeft: width * 0.1,
-    paddingRight: width * 0.1,
+    marginTop: 50,
+    marginLeft: 20,
+    marginRight: 20,
   },
-  header: {
-    fontFamily: "Futura",
-    color: "#35281e",
-  },
+
   filterSortContainer: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-evenly",
+    marginBottom: 20,
   },
 });

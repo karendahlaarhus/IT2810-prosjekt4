@@ -1,6 +1,6 @@
 import { urlencoded } from "express";
 import React from "react";
-import { ImageBackground, StyleSheet } from "react-native";
+import { ImageBackground, StyleSheet, TouchableOpacity } from "react-native";
 import {
   Card,
   Paragraph,
@@ -9,9 +9,15 @@ import {
   Text,
   Surface,
 } from "react-native-paper";
+import { Actions } from "react-native-router-flux";
+import RecipeContainer from "../RecipeContainer";
 //import food_bg from "./food_bg";
 
 export default function Frontpage() {
+  const goToAbout = () => {
+    Actions.search();
+  };
+
   return (
     <>
       <ImageBackground
@@ -34,17 +40,16 @@ export default function Frontpage() {
 
         <Card style={styles.card}>
           <Card.Content>
-            {/* <Card.Title
-            title="Go to search"
-            subtitle="a modern search engine for recipes"
-          ></Card.Title> */}
             <Paragraph style={styles.paragraph}>
               Please check out our search engine to find the perfect recipe for
               you!
             </Paragraph>
-            <Button color={"#006a4e"} icon="magnify">
+            <Button color="#006a4e" icon="magnify" onPress={goToAbout}>
               Go to Search
             </Button>
+            {/* <TouchableOpacity style={{ margin: 128 }} onPress={goToAbout}>
+              <Text>This is HOME!</Text>
+            </TouchableOpacity> */}
           </Card.Content>
         </Card>
       </ImageBackground>
