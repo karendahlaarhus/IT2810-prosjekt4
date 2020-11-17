@@ -8,11 +8,15 @@ Vi har valgt å utvikle en mobilapplikasjon som bygger videre på webapplikasjon
 - Filtrere på type
 - Sortere på alfabetisk rekkefølge og på antall porsjoner fra flest til færrest.
 
-![Frontpage](assets/Screenshots/Frontpage.png)
-![Search](assets/Screenshots/Search1.png)
-![Search](assets/Screenshots/Search2.png)
-![Recipe](assets/Screenshots/Recipe.png)
-![RecipeExpanded](assets/Screenshots/RecipeExpanded.png)
+<img src="assets/Screenshots/Frontpage.PNG" alt="Frontpage" width="200"/>
+<img src="assets/Screenshots/Frontpage.PNG" alt="Frontpage" width="200"/>
+<img src="assets/Screenshots/Frontpage.PNG" alt="Frontpage" width="200"/>
+<img src="assets/Screenshots/Frontpage.PNG" alt="Frontpage" width="200"/>
+![Frontpage](assets/Screenshots/Frontpage.PNG =200x)
+![Search](assets/Screenshots/Search1.PNG)
+![Search](assets/Screenshots/Search2.PNG)
+![Recipe](assets/Screenshots/Recipe.PNG)
+![RecipeExpanded](assets/Screenshots/RecipeExpanded.PNG)
 
 ## Hvordan kjøre prosjektet
 For å kjøre appen på mobil må først appen [Expo](https://expo.io/tools#client) lastes ned.
