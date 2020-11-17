@@ -8,6 +8,12 @@ Vi har valgt å utvikle en mobilapplikasjon som bygger videre på webapplikasjon
 - Filtrere på type
 - Sortere på alfabetisk rekkefølge og på antall porsjoner fra flest til færrest.
 
+![Frontpage](assets/Screenshots/Frontpage.png)
+![Search](assets/Screenshots/Search1.png)
+![Search](assets/Screenshots/Search2.png)
+![Recipe](assets/Screenshots/Recipe.png)
+![RecipeExpanded](assets/Screenshots/RecipeExpanded.png)
+
 ## Hvordan kjøre prosjektet
 For å kjøre appen på mobil må først appen [Expo](https://expo.io/tools#client) lastes ned.
 
@@ -27,7 +33,7 @@ Scan QR-koden som dukker opp i terminalen eller i Expo developer-fanen i nettles
 - `components/SearchBar.tsx` inneholder funksjonalitet for søking i datasettet
 - `components/FilterBar.tsx` inneholder funksjonalitet for å filtrere søkeresultatet basert på tags
 - `components/SortBar.tsx` inneholder funksjonalitet for å sortere søkeresultatet basert på antall porsjoner eller alfabetisk rekkefølge, både stigende og synkende
-- `components/Mondal.tsx` lager dialogboks med all informasjonen for hver enkelt oppskrift
+- `components/Modal.tsx` lager dialogboks med all informasjonen for hver enkelt oppskrift
 - `components/RecipeDisplay.tsx` importerer og kaller informasjonen fra Mondal.tsx
 - `components/RecipeContainer.tsx` samler komponentene SearchBar, SortBar, FilterBar og RecipeDisplay
 - `components/Routes.tsx` tar inn RecipeContainer og Frontpage, og binder dermed all funksjonalitet i applikasjonen
