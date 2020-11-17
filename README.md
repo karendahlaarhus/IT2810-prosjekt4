@@ -1,6 +1,6 @@
 # Mobilapplikasjon for Bon Appétit - IT2810 Prosjekt 4
 
-Vi har valgt å utvikle en mobilapplikasjon som bygger videre på webapplikasjonen vi utviklet i prosjekt 3. Mobil applikasjonen gir mulighet til å søke blant hundrevis av oppskrifter, samt filtrere og sortere søkeresultatene. 
+Vi har valgt å utvikle en mobilapplikasjon som bygger videre på webapplikasjonen vi utviklet i prosjekt 3. Mobilapplikasjonen gir mulighet til å søke blant hundrevis av oppskrifter, samt filtrere og sortere søkeresultatene. 
 
 ### På appen kan brukeren:
 - Se oppskrifter i en liste
@@ -8,16 +8,16 @@ Vi har valgt å utvikle en mobilapplikasjon som bygger videre på webapplikasjon
 - Filtrere på type
 - Sortere på alfabetisk rekkefølge og på antall porsjoner fra flest til færrest.
 
-<img src="assets/Screenshots/Frontpage.PNG" alt="Frontpage" width="200"/>
-<img src="assets/Screenshots/Search1.PNG" alt="Frontpage" width="200"/>
-<img src="assets/Screenshots/Search2.PNG" alt="Frontpage" width="200"/>  
-<img src="assets/Screenshots/Recipe.PNG" alt="Frontpage" width="200"/>
-<img src="assets/Screenshots/RecipeExpanded.PNG" alt="Frontpage" width="200"/>
+<img src="assets/Screenshots/Frontpage.PNG" alt="Frontpage" width="220"/>
+<img src="assets/Screenshots/Search1.PNG" alt="Frontpage" width="220"/>
+<img src="assets/Screenshots/Search2.PNG" alt="Frontpage" width="220"/>  
+<img src="assets/Screenshots/Recipe.PNG" alt="Frontpage" width="220"/>
+<img src="assets/Screenshots/RecipeExpanded.PNG" alt="Frontpage" width="220"/>
 
 ## Hvordan kjøre prosjektet
 For å kjøre appen på mobil må først appen [Expo](https://expo.io/tools#client) lastes ned.
 
-Kjør deretter følgende kommandoer:  
+Klon prosjektet og kjør deretter følgende kommandoer i terminalen :  
 - `npm install expo-cli --global`  
 - `expo start`  
 
@@ -77,7 +77,7 @@ Der det har vært en utfordring å tilpasse designet slik vi ønsker, samtidig s
 ## Backend
 Siden vi valgte å bevare funksjonaliteten fra prosjekt 3, trengte vi heller ikke å gjøre store endringer i backend. Vi har derfor denne gangen valgt å koble opp backenden fra prosjekt 3 på den virituelle maskinen hvor vi tidligere kun hadde databasen. Dette krevde kun små endringer i server-filen i backend, og en annen url for fetching av data. 
 
-Ved at vi har benyttet oss av unix-kommandoen `nohup node server.ts&` kjører nå backenden "evig" på serveren, og derfor inneholder dette prosjektet-repoet ingen backendfiler.
+Vi har altså nå en bakend som "kjører evig" på serveren , og derfor inneholder dette prosjektet-repoet ingen backendfiler.
 
 ## Testing
 Applikasjonen er manuelt ende-til-ende testet kontinuerlig under utvikling. Dette er gjort for å ikke overse åpenbare tekniske feil som hadde gjort at applikasjonen ikke hadde fungert som ønsket. Dette er gjort ved å bruke Expo's utivklingsverktøy for mobil ved å bruke deres mobilapplikasjon (Expo client app) for å få tilgang til applikasjonen som kjører på localhost på datamaskinen.  
