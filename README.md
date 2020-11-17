@@ -87,4 +87,5 @@ Applikasjonen er manuelt ende-til-ende testet kontinuerlig under utvikling. Dett
 ## Samarbeid, kommunikasjon og bruk av Git
 Alle tre gruppemedlemmene har bidratt til prosjektet. Arbeidsoppgaven er fordelt ved å opprette issues i GitLab, for å deretter opprette branches til hvert enkelt issue. Her har vi fordelt issues i mellom oss, slik at vi var sikre på at alle arbeidsoppgaver ble utført i tide. 
 
+### Videre utvikling
 Like før innlevering oppdaget vi et par feilmeldinger i applikasjonen. Midt oppi skolearbeid og eksamensstress så vi oss nødt til å la disse feilmeldingene ligge for denne gang. Ettersom feilmeldingene kun er warnings, og ikke errors, og heller ikke går utover funksjonaliteten i appen tok vi da en avgjørelse på at det ikke var kritisk at feilmeldingene ble værende. Dette er selvsagt noe som kan fikses i en senere anledning dersom vi ønsker å jobbe mer med prosjektet.
