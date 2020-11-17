@@ -110,21 +110,18 @@ const RecipeDisplay = (props: PropsFromRedux) => {
             style={styles.prevNext}
             compact
             color="#006a4e"
+            mode="contained"
           >
-            <Icon
-              name="navigate-next"
-              color="#006a4e"
-              size={40}
-              style={{ transform: [{ rotateY: "180deg" }] }}
-            />
+            Prev
           </Button>
           <Button
             onPress={() => handleNext()}
             style={styles.prevNext}
             compact
             color="#006a4e"
+            mode="contained"
           >
-            <Icon name="navigate-next" color="#006a4e" size={40} />
+            Next
           </Button>
         </View>
       </View>
@@ -141,6 +138,8 @@ const styles = StyleSheet.create({
   },
   prevNext: {
     marginTop: 20,
+    marginBottom: 60,
+    margin: 2,
   },
 });
 
