@@ -21,7 +21,7 @@ Vi har valgt å utvikle en mobilapplikasjon som bygger videre på webapplikasjon
 - `components/SortBar.tsx` inneholder funksjonalitet for å sortere søkeresultatet basert på antall porsjoner eller alfabetisk rekkefølge, både stigende og synkende
 - `components/Mondal.tsx` lager dialogboks med all informasjonen for hver enkelt oppskrift
 - `components/RecipeDisplay.tsx` importerer og kaller informasjonen fra Mondal.tsx
-- `components/RecipeContainer.tsx` samler komponentene SearchBar, SortBar og FilterBar
+- `components/RecipeContainer.tsx` samler komponentene SearchBar, SortBar, FilterBar og RecipeDisplay
 - `components/Routes.tsx` tar inn RecipeContainer og Frontpage, og binder dermed all funksjonalitet i applikasjonen
 - `App.tsx` tar inn Routes-komponenten
 
