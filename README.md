@@ -22,8 +22,7 @@ Vi har valgt å utvikle en mobilapplikasjon som bygger videre på webapplikasjon
 - `components/Mondal.tsx` lager dialogboks med all informasjonen for hver enkelt oppskrift
 - `components/RecipeDisplay.tsx` importerer og kaller informasjonen fra Mondal.tsx
 - `components/RecipeContainer.tsx` samler komponentene SearchBar, SortBar og FilterBar
-- `components/ScreenBar.tsx` inneholder kode for applikasjonens appBar som kontinuerlig ligger øverst. 
-- `App.tsx` kaller ScreenBar og RecipeContainer og samler dermed all funskjonaliteten
+- `App.tsx` kaller RecipeContainer og samler dermed all funskjonaliteten
 
 Mappen `store` inneholder all kode tilknyttet Redux. Se under punktet 'Redux' for å lese mer om bakgrunnen for valg av denne state manageren. Mer detaljert er koden fordelt slik: 
 
