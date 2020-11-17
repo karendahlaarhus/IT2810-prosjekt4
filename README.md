@@ -8,11 +8,11 @@ Vi har valgt å utvikle en mobilapplikasjon som bygger videre på webapplikasjon
 - Filtrere på type
 - Sortere på alfabetisk rekkefølge og på antall porsjoner fra flest til færrest.
 
-<img src="assets/Screenshots/Frontpage.PNG" alt="Frontpage" width="200"/>
-<img src="assets/Screenshots/Search1.PNG" alt="Frontpage" width="200"/>
-<img src="assets/Screenshots/Search2.PNG" alt="Frontpage" width="200"/>  
-<img src="assets/Screenshots/Recipe.PNG" alt="Frontpage" width="200"/>
-<img src="assets/Screenshots/RecipeExpanded.PNG" alt="Frontpage" width="200"/>
+<img src="assets/Screenshots/Frontpage.PNG" alt="Frontpage" width="220"/>
+<img src="assets/Screenshots/Search1.PNG" alt="Frontpage" width="220"/>
+<img src="assets/Screenshots/Search2.PNG" alt="Frontpage" width="220"/>  <br/>
+<img src="assets/Screenshots/Recipe.PNG" alt="Frontpage" width="220"/>
+<img src="assets/Screenshots/RecipeExpanded.PNG" alt="Frontpage" width="220"/>
 
 ## Hvordan kjøre prosjektet
 For å kjøre appen på mobil må først appen [Expo](https://expo.io/tools#client) lastes ned.
@@ -69,15 +69,17 @@ For tilstandshåndtering har vi valgt å implementere prosjektet med Redux. Dett
 
 Ved bruk av en state manager som Redux er det enkelt å håndtere forandringer av tilstand på de ulike datasettene, og sende dette rundt i applikasjonen til de komponentene som har bruk for informasjonen til enhver tid.
 
+## Backend
+Siden vi valgte å bevare funksjonaliteten fra prosjekt 3, trengte vi heller ikke å gjøre store endringer i backend. Vi har derfor denne gangen valgt å koble opp backenden fra prosjekt 3 på den virituelle maskinen hvor vi tidligere kun hadde databasen. Dette krevde kun små endringer i server-filen i backend, og en annen url for fetching av data. 
+
+Ved a benytte oss av unix-kommandoen `nohup node server.js&` har vi nå en backend som "kjører evig" på serveren, og derfor inneholder dette prosjektet-repoet ingen backendfiler.
+
+
 ## Gjenbruk
 All funksjonaliteten vi ønsket å ha i applikasjonen hadde vi allerede utviklet for webapplikasjonen i prosjekt 3. Mesteparten av arbeidet har derfor bestått i å overføre dette til React Native. All kode for å håndtere endringer av state (gjort med Redux) er derfor gjenbrukt fra prosjekt 3. Dette gjelder da backend, funksjonalitet for søk, sortering og filtrering. 
 
 Der det har vært en utfordring å tilpasse designet slik vi ønsker, samtidig som man tar vare på applikasjonens funksjonalitet, har vi prioritert å bevare funksjonalitet. Dette gjelder primært funksjonaliteten for å filtrere på kategorier. Her ønsket vi å gjøre designet likt som for sortering, men opplevde det da som en utfordring å bevare støtten få å velge flere filtre samtidig. Det ble derfor besluttet å beholde den løsningen vi har nå, hvor brukeren får mulighet til å velge flere filtre, slik oppgaven etterspør. 
 
-## Backend
-Siden vi valgte å bevare funksjonaliteten fra prosjekt 3, trengte vi heller ikke å gjøre store endringer i backend. Vi har derfor denne gangen valgt å koble opp backenden fra prosjekt 3 på den virituelle maskinen hvor vi tidligere kun hadde databasen. Dette krevde kun små endringer i server-filen i backend, og en annen url for fetching av data. 
-
-Ved a benytte oss av unix-kommandoen `nohup node server.js&` har vi nå en backend som "kjører evig" på serveren, og derfor inneholder dette prosjektet-repoet ingen backendfiler.
 
 ## Testing
 Applikasjonen er manuelt ende-til-ende testet kontinuerlig under utvikling. Dette er gjort for å ikke overse åpenbare tekniske feil som hadde gjort at applikasjonen ikke hadde fungert som ønsket. Dette er gjort ved å bruke Expo's utivklingsverktøy for mobil ved å bruke deres mobilapplikasjon (Expo client app) for å få tilgang til applikasjonen som kjører på localhost på datamaskinen.  
