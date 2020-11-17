@@ -7,6 +7,7 @@ import { fireAction } from "../store/reducers/appReducer";
 import { Button, Menu, Provider, Drawer } from "react-native-paper";
 import { View, StyleSheet } from "react-native";
 
+/* This component handles sorting of recipes */
 const SortBar = () => {
   const dispatch = useDispatch();
   const [value, setValue] = React.useState("");

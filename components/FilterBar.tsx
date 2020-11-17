@@ -1,17 +1,11 @@
 import { connect, useDispatch } from "react-redux";
 import React, { useState } from "react";
 import { updateFilter } from "../store/actions/actions";
-import { Button, Checkbox, Paragraph, ToggleButton } from "react-native-paper";
-import { View, StyleSheet, AsyncStorage } from "react-native";
-import { grey } from "@material-ui/core/colors";
-
-/**
- *
- * To update if the boxes is already checked or not by using data from Redux
- * https://medium.com/building-with-react-native/what-is-asyncstorage-in-react-native-and-how-you-to-use-it-with-app-state-manager-1x09-b8c636ce5f6e
- */
+import { Button, Checkbox } from "react-native-paper";
+import { View, StyleSheet } from "react-native";
 
 export const FilterBar = () => {
+  /*Component used for filter button with functionality for filtering recipes */
   const dispatch = useDispatch();
   const [checkedMain, setCheckedMain] = React.useState(false);
   const [checkedSnack, setCheckedSnack] = React.useState(false);
@@ -21,6 +15,7 @@ export const FilterBar = () => {
 
   const [isOpenedFilter, setIsOpenedFilter] = useState(false);
 
+  /* Used for toggle between show/hide filter*/
   function toggleFilter() {
     setIsOpenedFilter((wasOpened) => !wasOpened);
   }
@@ -87,7 +82,6 @@ const mapStateToProps = (state: { recipes: { filterChoice: [] } }) => ({
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 2,
     backgroundColor: "#fff",
     justifyContent: "center",
   },

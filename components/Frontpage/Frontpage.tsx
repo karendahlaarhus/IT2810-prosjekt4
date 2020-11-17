@@ -1,20 +1,13 @@
-import { urlencoded } from "express";
 import React from "react";
 import { ImageBackground, StyleSheet, TouchableOpacity } from "react-native";
-import {
-  Card,
-  Paragraph,
-  Title,
-  Button,
-  Text,
-  Surface,
-} from "react-native-paper";
+import { Card, Paragraph, Button } from "react-native-paper";
 import { Actions } from "react-native-router-flux";
-import RecipeContainer from "../RecipeContainer";
-//import food_bg from "./food_bg";
+
+/* This component is the application frontpage */
 
 export default function Frontpage() {
-  const goToAbout = () => {
+  /* This function is used for redirecting to page for searching in recipes */
+  const goToSearch = () => {
     Actions.search();
   };
 
@@ -44,12 +37,9 @@ export default function Frontpage() {
               Please check out our search engine to find the perfect recipe for
               you!
             </Paragraph>
-            <Button color="#006a4e" icon="magnify" onPress={goToAbout}>
+            <Button color="#006a4e" icon="magnify" onPress={goToSearch}>
               Go to Search
             </Button>
-            {/* <TouchableOpacity style={{ margin: 128 }} onPress={goToAbout}>
-              <Text>This is HOME!</Text>
-            </TouchableOpacity> */}
           </Card.Content>
         </Card>
       </ImageBackground>

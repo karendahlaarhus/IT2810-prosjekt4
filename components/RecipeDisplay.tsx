@@ -7,6 +7,11 @@ import Modal from "./Modal";
 import { Button, Provider as PaperProvider } from "react-native-paper";
 import { Icon } from "react-native-elements";
 
+/*
+This component handles fetching data from db and sending the data to 
+components that handles and display the data (Modal.tsx). 
+Also next and prev buttons are implemented in this component
+*/
 const mapState = (state: typeof initialState) => ({
   text: state.text,
   ascending: state.ascending,
@@ -64,6 +69,7 @@ const RecipeDisplay = (props: PropsFromRedux) => {
     return order;
   }
 
+  /* Used for fetching data from db on vm */
   useEffect(() => {
     async function fetchData() {
       let sortOrder = sortOrderToString(ascending);
@@ -79,6 +85,7 @@ const RecipeDisplay = (props: PropsFromRedux) => {
   return (
     <>
       <View>
+        {/* Use data from database in popup modal (dialog box) component */}
         <FlatList
           data={recipes}
           renderItem={({ item }) => (
@@ -95,6 +102,8 @@ const RecipeDisplay = (props: PropsFromRedux) => {
             />
           )}
         />
+        {/* Code that handles next and prev buttons (to make it possible to 
+          browse recipes) */}
         <View style={styles.wrapper}>
           <Button
             onPress={() => handlePrev()}

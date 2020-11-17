@@ -3,8 +3,8 @@ import { sendQuery } from "../store/actions/actions";
 import { useDispatch } from "react-redux";
 import { StyleSheet, View } from "react-native";
 import { Icon, Input } from "react-native-elements";
-import { TextInput } from "react-native-paper";
 
+/* Component used for search (searchfield and icon) */
 export const SearchBar = () => {
   const dispatch = useDispatch();
 

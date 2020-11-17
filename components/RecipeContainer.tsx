@@ -1,27 +1,16 @@
 import React from "react";
 import SearchBar from "./SearchBar";
 import SortBar from "./SortBar";
-import { Text } from "react-native";
-import {
-  View,
-  StyleSheet,
-  Dimensions,
-  ScrollView,
-  TouchableOpacity,
-} from "react-native";
+import { View, StyleSheet, Dimensions, ScrollView } from "react-native";
 import RecipeDisplay from "./RecipeDisplay";
 import FilterBar from "./FilterBar";
-import ScreenBar from "./ScreenBar";
-import { Actions } from "react-native-router-flux";
 
+/*This component contains all elements shown on the search page */
 export default function RecipeContainer() {
-  const goToHome = () => {
-    Actions.frontpage();
-  };
   return (
     <>
+      {/* ScrollView used for making scrolling possible*/}
       <ScrollView>
-        {/* <ScreenBar /> */}
         <View style={styles.container}>
           <SearchBar />
           <View style={styles.filterSortContainer}>
@@ -35,7 +24,6 @@ export default function RecipeContainer() {
   );
 }
 
-var { height, width } = Dimensions.get("window");
 const styles = StyleSheet.create({
   container: {
     flexDirection: "column",
